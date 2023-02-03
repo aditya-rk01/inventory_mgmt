@@ -20,7 +20,7 @@ public class primaryCaseController {
     }
 
     @GetMapping("get-pCase/{pCaseId}")
-    public primaryCase getpCase(int pCaseId){
+    public primaryCase getpCase(@PathVariable int pCaseId){
         return pCase_Serv.getpCasebyId(pCaseId);
     }
 

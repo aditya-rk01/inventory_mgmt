@@ -13,22 +13,22 @@ public class invItemController {
     @Autowired
     private invItemService invItem_Serv;
 
-    @GetMapping("getall")
+    @GetMapping("getall-invItem")
     public List<invItem> getAllInvItems() {
         return invItem_Serv.getAllInvItems();
     }
 
-    @GetMapping("get/{invId}")
-    public invItem getInvItembyId(int invId){
+    @GetMapping("get-invItem/{invId}")
+    public invItem getInvItembyId(@PathVariable Integer invId){
         return invItem_Serv.getInvItembyId(invId);
     }
 
-    @PostMapping("insert")
+    @PostMapping("insert-invItem")
     public void addInvItem(@RequestBody invItem a_invItem){
         invItem_Serv.addInvItem(a_invItem);
     }
 
-    @DeleteMapping("delete/{invId}")
+    @DeleteMapping("delete-invItem/{invId}")
     public void delInvItem(Integer invId){
         invItem_Serv.delInvItem(invId);
     }
